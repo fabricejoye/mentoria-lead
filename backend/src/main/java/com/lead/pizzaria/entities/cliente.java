@@ -9,7 +9,9 @@ public class cliente {
     @Id
     @GeneratedValue
     private long id;
-    private String name;
+    private String firstname;
+    private String lastname;
+    private String cpf;
     private String email;
     private String tel;
     private String street;
@@ -20,27 +22,32 @@ public class cliente {
     // descrição do tipo lado do pão de açucar
     private String hint;
 
-    public void new_order() {}
-
-    public void order_again_last_order(int id_order) {}
-
-    public void cancel_order(int id_order) {}
-
-    // if (state = andamento && (date_today - date_created) <24h)
-    public void continue_last_order(int id_order) {}
-
-    public void finalize_order(int id_order) {}
-
     public long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
 
     public String getEmail() {
