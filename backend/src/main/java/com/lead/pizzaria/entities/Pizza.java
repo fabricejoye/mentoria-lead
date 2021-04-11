@@ -1,19 +1,16 @@
 package com.lead.pizzaria.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+// Dados: sabor, preço
+// [calabresa, 0], [marguerita, 0], [portuguesa, 0]
 
-// Dados sobre os tipos de pizzas: calabresa, marguerita, portuguesa
-// [calabresa, 0], [Marguerita, 0], [Portuguesa, 5]
+import java.util.Date;
 
-@Entity
-public class pizza {
-    @Id
-    @GeneratedValue
+public class Pizza {
     private int id;
     private String flavor;
     private int duration;
+    private boolean availability;
+    private Date dataCreated;
 
     public int getId() {
         return id;

@@ -1,23 +1,25 @@
 package com.lead.pizzaria.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
 // Dados: extra, preço e duração
 // [Extra bacon, 3, 0], [Sem cebola, 0, 0], [Borda recheada, 5, 5]
 
-@Entity
-public class pizza_extra {
-    @Id
-    @GeneratedValue
+import java.util.Date;
+
+public class Pizza_extra {
+
     private int id;
     private String extra;
     private int price;
     private int duration;
+    private boolean availability;
+    private Date dataCreated;
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getExtra() {
@@ -42,5 +44,21 @@ public class pizza_extra {
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    public boolean isAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(boolean availability) {
+        this.availability = availability;
+    }
+
+    public Date getDataCreated() {
+        return dataCreated;
+    }
+
+    public void setDataCreated(Date dataCreated) {
+        this.dataCreated = dataCreated;
     }
 }

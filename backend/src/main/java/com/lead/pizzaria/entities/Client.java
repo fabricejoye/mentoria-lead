@@ -1,17 +1,11 @@
 package com.lead.pizzaria.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import java.util.Date;
 
-@Entity
-public class cliente {
-    @Id
-    @GeneratedValue
+public class Client {
     private long id;
     private String firstname;
     private String lastname;
-    private String cpf;
     private String email;
     private String tel;
     private String street;
@@ -21,9 +15,14 @@ public class cliente {
     private String district;
     // descrição do tipo lado do pão de açucar
     private String hint;
+    private Date dataCreated;
 
     public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getFirstname() {
@@ -40,14 +39,6 @@ public class cliente {
 
     public void setLastname(String lastname) {
         this.lastname = lastname;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
     }
 
     public String getEmail() {
@@ -112,5 +103,13 @@ public class cliente {
 
     public void setHint(String hint) {
         this.hint = hint;
+    }
+
+    public Date getDataCreated() {
+        return dataCreated;
+    }
+
+    public void setDataCreated(Date dataCreated) {
+        this.dataCreated = dataCreated;
     }
 }
