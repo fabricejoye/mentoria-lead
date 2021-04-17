@@ -1,16 +1,29 @@
 package com.lead.pizzaria.entities;
 
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+@Entity
 public class Order {
+    @Id
+    @GeneratedValue
     private long id;
+    @OneToMany(mappedBy = "client")
     private Client client;
+    @OneToMany(mappedBy = "attendant")
     private Attendant attendant;
+    @OneToOne
+    @JoinColumn(name = "pizza_ID")
     private Pizza pizza;
+    @OneToOne
+    @JoinColumn(name = "pizza_size_ID")
     private Pizza_size pizza_size;
     // Indica se tem extra no pedido > Lista está em pizza_extra_cliente
     private boolean has_pizza_extra;
-    private Pizza_extra[] pizza_extra;
+    @OneToMany
+    @JoinColumn(name = "pizza_extra_ID")
+    private List<Pizza_extra> pizza_extra;
 
     // Order
     // state = [finalizado, abandonado (>24h), cancelado (botão), andamento (<24h)]
@@ -21,15 +34,13 @@ public class Order {
     private int price;
     // Total duration
     private int duration;
-    private Date data_created;
-    private Date data_finished;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date creationDate;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date finishedDate;
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public Client getClient() {
@@ -72,11 +83,11 @@ public class Order {
         this.has_pizza_extra = has_pizza_extra;
     }
 
-    public Pizza_extra[] getPizza_extra() {
+    public List<Pizza_extra> getPizza_extra() {
         return pizza_extra;
     }
 
-    public void setPizza_extra(Pizza_extra[] pizza_extra) {
+    public void setPizza_extra(List<Pizza_extra> pizza_extra) {
         this.pizza_extra = pizza_extra;
     }
 
@@ -112,19 +123,19 @@ public class Order {
         this.duration = duration;
     }
 
-    public Date getData_created() {
-        return data_created;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public void setData_created(Date data_created) {
-        this.data_created = data_created;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 
-    public Date getData_finished() {
-        return data_finished;
+    public Date getFinishedDate() {
+        return finishedDate;
     }
 
-    public void setData_finished(Date data_finished) {
-        this.data_finished = data_finished;
+    public void setFinishedDate(Date finishedDate) {
+        this.finishedDate = finishedDate;
     }
 }

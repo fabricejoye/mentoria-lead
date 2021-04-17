@@ -1,28 +1,34 @@
 package com.lead.pizzaria.entities;
 
+import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
+@Entity
 public class Client {
+    @Id
+    @GeneratedValue
     private long id;
     private String firstname;
     private String lastname;
     private String email;
     private String tel;
     private String street;
-    private String number;
+    private int streetNumber;
     private String city;
     private String zipcode;
     private String district;
-    // descrição do tipo lado do pão de açucar
+    // description: beside the supermarket
+    @Column(length = 2000)
     private String hint;
-    private Date dataCreated;
+    @OneToMany
+    @JoinColumn(name = "order_ID")
+    private List<Order> order;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date creationDate;
 
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getFirstname() {
@@ -65,12 +71,12 @@ public class Client {
         this.street = street;
     }
 
-    public String getNumber() {
-        return number;
+    public int getStreetNumber() {
+        return streetNumber;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setStreetNumber(int streetNumber) {
+        this.streetNumber = streetNumber;
     }
 
     public String getCity() {
@@ -105,11 +111,19 @@ public class Client {
         this.hint = hint;
     }
 
-    public Date getDataCreated() {
-        return dataCreated;
+    public List<Order> getOrder() {
+        return order;
     }
 
-    public void setDataCreated(Date dataCreated) {
-        this.dataCreated = dataCreated;
+    public void setOrder(List<Order> order) {
+        this.order = order;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
     }
 }
