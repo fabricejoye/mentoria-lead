@@ -27,6 +27,22 @@ public class Client {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
+    public Client(String firstname, String lastname, String email, String tel, String street, int streetNumber, String city, String zipcode, String district, String hint) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.tel = tel;
+        this.street = street;
+        this.streetNumber = streetNumber;
+        this.city = city;
+        this.zipcode = zipcode;
+        this.district = district;
+        this.hint = hint;
+    }
+
+    public Client() {
+    }
+
     public long getId() {
         return id;
     }
