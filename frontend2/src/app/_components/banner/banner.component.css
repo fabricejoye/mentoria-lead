@@ -1,0 +1,27 @@
+.banner {
+  align-items: stretch;
+}
+
+.wrapper-logo {
+  flex: 0 1 150px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0;
+  background-color: #E7DFCC;
+}
+
+nav {
+  flex: 1 1 auto;
+}
+
+/* Override Bootstrap */
+.navbar-light .navbar-nav .nav-link.logout:hover, .navbar-light .navbar-nav .nav-link.logout:focus  {
+  color: red;
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar-light .navbar-toggler {
+    background-color: #FBB017;
+  }
+}

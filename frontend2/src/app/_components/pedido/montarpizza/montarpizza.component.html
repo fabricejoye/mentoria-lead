@@ -1,0 +1,47 @@
+<h2 class="mb-4">Escolha o tamanho da sua pizza:</h2>
+<div class="wrapper-list-pizzas d-lg-flex">
+  <div class="list-pizzas" *ngFor="let pizzaSize of pizza_size">
+
+    <div class="card mx-auto">
+      <img src="../assets/images/{{pizzaSizeImg[pizzaSize.id]}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="form-check">
+          <input class="form-check-input pizza-size" type="radio" name="pizza-size" id="{{pizzaSize.size}}">
+          <label class="form-check-label" for="{{pizzaSize.size}}">
+            <h5 class="card-title">{{pizzaSize.size}}</h5>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer">
+        <div class="text-center tempo"><i class="bi bi-clock"></i> {{pizzaSize.duration}} mn</div>
+        <div class="text-center"><i class="bi bi-tag"></i> {{pizzaSize.price | currency:'R$ '}}</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<h2 class="mb-4 mt-4">Escolha o sabor da sua pizza:</h2>
+<div class="wrapper-list-pizzas d-lg-flex">
+  <div class="list-pizzas" *ngFor="let pizza of pizzas">
+
+    <div class="card mx-auto">
+      <img src="../assets/images/{{pizzaFoto[pizza.id]}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="form-check">
+          <input class="form-check-input pizza-flavor" type="radio" name="pizza-flavor" id="{{pizza.flavor}}">
+          <label class="form-check-label" for="{{pizza.flavor}}">
+            <h5 class="card-title">{{pizza.flavor}}</h5>
+          </label>
+        </div>
+      </div>
+      <div class="card-footer d-block">
+        <div class="text-center fw-bold"><span class="tempo"><i class="bi bi-clock"></i> {{pizza.duration}} mn</span>&nbsp;</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<a class="btn btn-pizzaria btn-lg" href="#" role="button">Confirmar</a>
+
+

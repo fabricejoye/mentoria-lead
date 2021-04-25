@@ -1,0 +1,19 @@
+<figure class="text-center">
+  <img src="../assets/images/logo_landscape.png" class="img-fluid" alt="Logo Pizzaria Barreta">
+</figure>
+<div class="login mx-auto mt-4">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Seu email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" value="{{client.email}}">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" value="abcd1234">
+    </div>
+    <div class="text-center">
+      <a class="btn mx-auto" style="background-color: #F7ECDA;" routerLink="/home" role="button" (click)="logOn()">Entrar</a>
+    </div>
+
+  </form>
+</div>
