@@ -6,6 +6,7 @@ import java.util.List;
 
 @Entity
 public class Attendant {
+    //
     @Id
     @GeneratedValue
     private long id;
@@ -16,9 +17,15 @@ public class Attendant {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
-    @OneToMany
-    @JoinColumn(name = "order_id")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "attendant")
     private List<Order> order;
+
+    public  Attendant(String firstname, String lastname, String email, String tel) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.tel = tel;
+    }
 
     public long getId() {
         return id;

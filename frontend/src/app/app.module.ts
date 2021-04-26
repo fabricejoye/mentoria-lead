@@ -11,6 +11,8 @@ import { HomecontentComponent } from './_components/homecontent/homecontent.comp
 import { PedidoComponent } from './_pages/pedido/pedido.component';
 import { MontarpizzaComponent } from './_components/pedido/montarpizza/montarpizza.component';
 import { PersonalizarpizzaComponent } from './_components/pedido/personalizarpizza/personalizarpizza.component';
+import { SeuspedidosComponent } from './_pages/seuspedidos/seuspedidos.component';
+import { PerfilComponent } from './_pages/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { PersonalizarpizzaComponent } from './_components/pedido/personalizarpiz
     HomecontentComponent,
     PedidoComponent,
     MontarpizzaComponent,
-    PersonalizarpizzaComponent
+    PersonalizarpizzaComponent,
+    SeuspedidosComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

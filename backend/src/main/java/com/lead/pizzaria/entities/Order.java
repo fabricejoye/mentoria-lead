@@ -9,10 +9,12 @@ public class Order {
     @Id
     @GeneratedValue
     private long id;
-    @OneToMany(mappedBy = "client")
-    private Client client;
-    @OneToMany(mappedBy = "attendant")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "attendant_ID")
     private Attendant attendant;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "client_ID")
+    private Client client;
     @OneToOne
     @JoinColumn(name = "pizza_ID")
     private Pizza pizza;
@@ -39,8 +41,12 @@ public class Order {
     @Temporal(TemporalType.TIMESTAMP)
     private Date finishedDate;
 
-    public long getId() {
-        return id;
+    public Attendant getAttendant() {
+        return attendant;
+    }
+
+    public void setAttendant(Attendant attendant) {
+        this.attendant = attendant;
     }
 
     public Client getClient() {
@@ -51,12 +57,8 @@ public class Order {
         this.client = client;
     }
 
-    public Attendant getAttendant() {
-        return attendant;
-    }
-
-    public void setAttendant(Attendant attendant) {
-        this.attendant = attendant;
+    public long getId() {
+        return id;
     }
 
     public Pizza getPizza() {

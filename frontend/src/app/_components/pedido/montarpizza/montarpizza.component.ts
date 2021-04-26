@@ -17,6 +17,17 @@ export class MontarpizzaComponent implements OnInit {
 
   pizzaSizeImg = {"1": "pizza-p.png", "2": "pizza-m.png", "3": "pizza-g.png"};
 
+  pizzaSizeId: number;
+  pizzaId: number;
+
+  pizzaSizeCheck(id) {
+    this.pizzaSizeId = id;
+  }
+
+  pizzaCheck(id) {
+    this.pizzaId = id;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

@@ -21,8 +21,7 @@ public class Client {
     // description: beside the supermarket
     @Column(length = 2000)
     private String hint;
-    @OneToMany
-    @JoinColumn(name = "order_ID")
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "client")
     private List<Order> order;
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;

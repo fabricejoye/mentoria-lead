@@ -1,0 +1,24 @@
+2021-04-26 14:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "CREATE TABLE ORDER[*] (ID BIGINT NOT NULL, CREATION_DATE TIMESTAMP, DURATION INTEGER NOT NULL, FINISHED_DATE TIMESTAMP, HAS_PIZZA_EXTRA BOOLEAN NOT NULL, PRICE INTEGER NOT NULL, STATE VARCHAR(255), STEP INTEGER NOT NULL, ATTENDANT_ID BIGINT, CLIENT_ID BIGINT, PIZZA_ID INTEGER, PIZZA_SIZE_ID INTEGER, PRIMARY KEY (ID))"; attendu "identifier"
+Syntax error in SQL statement "CREATE TABLE ORDER[*] (ID BIGINT NOT NULL, CREATION_DATE TIMESTAMP, DURATION INTEGER NOT NULL, FINISHED_DATE TIMESTAMP, HAS_PIZZA_EXTRA BOOLEAN NOT NULL, PRICE INTEGER NOT NULL, STATE VARCHAR(255), STEP INTEGER NOT NULL, ATTENDANT_ID BIGINT, CLIENT_ID BIGINT, PIZZA_ID INTEGER, PIZZA_SIZE_ID INTEGER, PRIMARY KEY (ID))"; expected "identifier"; SQL statement:
+create table order (id bigint not null, creation_date timestamp, duration integer not null, finished_date timestamp, has_pizza_extra boolean not null, price integer not null, state varchar(255), step integer not null, attendant_id bigint, client_id bigint, pizza_id integer, pizza_size_id integer, primary key (id)) [42001-200]
+2021-04-26 14:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "ALTER TABLE ORDER[*] ADD CONSTRAINT FK2O3TNADHVYSQYI70A56OPLTVE FOREIGN KEY (ATTENDANT_ID) REFERENCES ATTENDANT"; attendu "identifier"
+Syntax error in SQL statement "ALTER TABLE ORDER[*] ADD CONSTRAINT FK2O3TNADHVYSQYI70A56OPLTVE FOREIGN KEY (ATTENDANT_ID) REFERENCES ATTENDANT"; expected "identifier"; SQL statement:
+alter table order add constraint FK2o3tnadhvysqyi70a56opltve foreign key (attendant_id) references attendant [42001-200]
+2021-04-26 14:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "ALTER TABLE ORDER[*] ADD CONSTRAINT FKBB5WAKYPPWQMFUHP53P3JVS5U FOREIGN KEY (CLIENT_ID) REFERENCES CLIENT"; attendu "identifier"
+Syntax error in SQL statement "ALTER TABLE ORDER[*] ADD CONSTRAINT FKBB5WAKYPPWQMFUHP53P3JVS5U FOREIGN KEY (CLIENT_ID) REFERENCES CLIENT"; expected "identifier"; SQL statement:
+alter table order add constraint FKbb5wakyppwqmfuhp53p3jvs5u foreign key (client_id) references client [42001-200]
+2021-04-26 14:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "ALTER TABLE ORDER[*] ADD CONSTRAINT FK75QB91IX4KF1J4GIWN1LRS9OJ FOREIGN KEY (PIZZA_ID) REFERENCES PIZZA"; attendu "identifier"
+Syntax error in SQL statement "ALTER TABLE ORDER[*] ADD CONSTRAINT FK75QB91IX4KF1J4GIWN1LRS9OJ FOREIGN KEY (PIZZA_ID) REFERENCES PIZZA"; expected "identifier"; SQL statement:
+alter table order add constraint FK75qb91ix4kf1j4giwn1lrs9oj foreign key (pizza_id) references pizza [42001-200]
+2021-04-26 14:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "ALTER TABLE ORDER[*] ADD CONSTRAINT FK97YIE54OT00L61E1AEF9X3AY1 FOREIGN KEY (PIZZA_SIZE_ID) REFERENCES PIZZA_SIZE"; attendu "identifier"
+Syntax error in SQL statement "ALTER TABLE ORDER[*] ADD CONSTRAINT FK97YIE54OT00L61E1AEF9X3AY1 FOREIGN KEY (PIZZA_SIZE_ID) REFERENCES PIZZA_SIZE"; expected "identifier"; SQL statement:
+alter table order add constraint FK97yie54ot00l61e1aef9x3ay1 foreign key (pizza_size_id) references pizza_size [42001-200]
+2021-04-26 14:16:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Erreur de syntaxe dans l'instruction SQL "ALTER TABLE PIZZA_EXTRA ADD CONSTRAINT FKJ5YNL9QIYQ0W6UPUB79MSV5VH FOREIGN KEY (PIZZA_EXTRA_ID) REFERENCES ORDER[*]"; attendu "identifier"
+Syntax error in SQL statement "ALTER TABLE PIZZA_EXTRA ADD CONSTRAINT FKJ5YNL9QIYQ0W6UPUB79MSV5VH FOREIGN KEY (PIZZA_EXTRA_ID) REFERENCES ORDER[*]"; expected "identifier"; SQL statement:
+alter table pizza_extra add constraint FKj5ynl9qiyq0w6upub79msv5vh foreign key (pizza_extra_id) references order [42001-200]

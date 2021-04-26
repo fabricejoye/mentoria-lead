@@ -6,7 +6,7 @@
       <img src="../assets/images/{{pizzaSizeImg[pizzaSize.id]}}" class="card-img-top" alt="...">
       <div class="card-body">
         <div class="form-check">
-          <input class="form-check-input pizza-size" type="radio" name="pizza-size" id="{{pizzaSize.size}}">
+          <input class="form-check-input pizza-size" type="radio" name="pizza-size" (click) = "pizzaSizeCheck(pizzaSize.id)" id="{{pizzaSize.size}}" value="{{pizzaSize.id}}">
           <label class="form-check-label" for="{{pizzaSize.size}}">
             <h5 class="card-title">{{pizzaSize.size}}</h5>
           </label>
@@ -28,7 +28,7 @@
       <img src="../assets/images/{{pizzaFoto[pizza.id]}}" class="card-img-top" alt="...">
       <div class="card-body">
         <div class="form-check">
-          <input class="form-check-input pizza-flavor" type="radio" name="pizza-flavor" id="{{pizza.flavor}}">
+          <input class="form-check-input pizza-flavor" type="radio" name="pizza-flavor" (click) = "pizzaCheck(pizza.id)" id="{{pizza.flavor}}" value="{{pizza.id}}">
           <label class="form-check-label" for="{{pizza.flavor}}">
             <h5 class="card-title">{{pizza.flavor}}</h5>
           </label>
@@ -42,6 +42,6 @@
   </div>
 </div>
 
-<a class="btn btn-pizzaria btn-lg" href="#" role="button">Confirmar</a>
+<button class="btn btn-pizzaria btn-lg" role="button">Confirmar</button>
 
 

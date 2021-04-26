@@ -19,9 +19,13 @@ export class PedidoComponent implements OnInit {
   pizzas_size = PIZZAS_SIZE;
   client_order = new Order(1, this.client.id);
 
+  stepOrder: number;
+
   constructor() { }
 
   ngOnInit(): void {
+
+    this.stepOrder = 1;
   }
 
 }
