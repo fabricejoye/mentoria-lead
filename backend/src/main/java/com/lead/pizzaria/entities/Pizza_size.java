@@ -17,6 +17,16 @@ public class Pizza_size {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
+    public Pizza_size(String size, int price, int duration) {
+        this.size = size;
+        this.price = price;
+        this.duration = duration;
+        // Check??
+        //this.creationDate = new Date(System.currentTimeMillis());
+    }
+
+    public Pizza_size() {}
+
     public int getId() {
         return id;
     }

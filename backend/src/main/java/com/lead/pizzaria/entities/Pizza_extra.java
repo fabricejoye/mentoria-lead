@@ -19,6 +19,17 @@ public class Pizza_extra {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
+    public  Pizza_extra(String extra, int price, int duration, boolean availability) {
+        this.extra = extra;
+        this.price = price;
+        this.duration = duration;
+        this.availability = availability;
+        // Check??
+        //this.creationDate = new Date(System.currentTimeMillis());
+    }
+
+    public Pizza_extra() {}
+
     public int getId() {
         return id;
     }

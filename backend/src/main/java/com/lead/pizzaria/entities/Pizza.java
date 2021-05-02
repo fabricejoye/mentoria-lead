@@ -17,6 +17,17 @@ public class Pizza {
     @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
 
+    public Pizza(String flavor, int duration, boolean availability) {
+        this.flavor = flavor;
+        this.duration = duration;
+        this.availability = availability;
+        // Check??
+        //this.creationDate = new Date(System.currentTimeMillis());
+    }
+
+    public Pizza() {
+    }
+
     public int getId() {
         return id;
     }
