@@ -4,12 +4,14 @@ import { PIZZAS } from '../../mocks/mock_pizzas';
 import { PIZZAS_EXTRA } from '../../mocks/mock_pizza_extra';
 import { PIZZAS_SIZE } from '../../mocks/mock_pizza_size';
 import { Order } from 'src/app/_models/order';
+import { PizzaFlavor, PizzaService } from 'src/app/_services/pizza.service';
 
 
 @Component({
   selector: 'app-pedido',
   templateUrl: './pedido.component.html',
-  styleUrls: ['./pedido.component.css']
+  styleUrls: ['./pedido.component.css'],
+  providers: [PizzaService]
 })
 export class PedidoComponent implements OnInit {
 
@@ -31,9 +33,14 @@ export class PedidoComponent implements OnInit {
     this.client_order.duration = this.client_order.pizza.duration + this.client_order.pizza_size.duration;
   }
 
-  constructor() { }
+  constructor(private _pizzaService: PizzaService) {
+    this._pizzaService.getPizzaFlavor()
+        .subscribe(data => console.log(data));
+  }
 
   ngOnInit(): void {
+
+    //populate template with data
 
     this.stepOrder = 1;
   }

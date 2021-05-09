@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { BannerComponent } from './_components/banner/banner.component';
 import { LoginComponent } from './_pages/login/login.component';
 import { HomeComponent } from './_pages/home/home.component';
@@ -33,7 +34,8 @@ import { CartComponent } from './_components/cart/cart.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
