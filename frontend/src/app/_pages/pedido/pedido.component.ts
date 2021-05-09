@@ -21,6 +21,16 @@ export class PedidoComponent implements OnInit {
 
   stepOrder: number;
 
+  // Receive pizza and pizza_size from montarpizza
+  addItem(newItem: string) {
+    newItem.split("-");
+    this.client_order.pizza = PIZZAS[parseInt(newItem[0], 10)-1];
+    this.client_order.pizza_size = PIZZAS_SIZE[parseInt(newItem[2], 10)-1];
+    this.stepOrder = 2;
+    this.client_order.price = this.client_order.pizza_size.price;
+    this.client_order.duration = this.client_order.pizza.duration + this.client_order.pizza_size.duration;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

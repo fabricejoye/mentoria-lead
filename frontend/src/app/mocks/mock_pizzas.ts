@@ -6,7 +6,7 @@ import { Pizza } from 'src/app/_models/pizza';
 // Popular a partir da DB
 
 export const PIZZAS: Pizza[] = [
-  { id: 1, flavor: 'Calabresa', duration: 0, availability: true, creationDate: new Date()},
-  { id: 2, flavor: 'Marguerita', duration: 0, availability: true, creationDate: new Date()},
-  { id: 3, flavor: 'Portuguesa', duration: 5, availability: true, creationDate: new Date()},
+  { id: 1, flavor: 'Calabresa', duration: 0, availability: true, img: "calabresa.png", creationDate: new Date()},
+  { id: 2, flavor: 'Marguerita', duration: 0, availability: true,img: "marguerita.png", creationDate: new Date()},
+  { id: 3, flavor: 'Portuguesa', duration: 5, availability: true,img: "portuguesa.png", creationDate: new Date()},
 ]

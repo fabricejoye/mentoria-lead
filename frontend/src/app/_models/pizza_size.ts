@@ -3,5 +3,6 @@ export interface Pizza_size {
   size: string;
   price: number;
   duration: number;
+  img: string;
   creationDate: Date;
 }

@@ -1,5 +1,6 @@
+<app-cart [order]="client_order" *ngIf = "stepOrder == 2"></app-cart>
 <div class="m-4" [ngSwitch]="stepOrder">
-  <app-montarpizza *ngSwitchCase="1"></app-montarpizza>
-  <app-personalizarpizza *ngSwitchCase="2"></app-personalizarpizza>
+  <app-montarpizza *ngSwitchCase="1" [pizzas]="pizzas" [pizzaSizes]="pizzas_size" (newItemEvent)="addItem($event)"></app-montarpizza>
+  <app-personalizarpizza [order]="client_order" *ngSwitchCase="2"></app-personalizarpizza>
 </div>
 

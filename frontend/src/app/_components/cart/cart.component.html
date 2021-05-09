@@ -1,0 +1,13 @@
+<div class="m-4">
+  <h5>Seu pedido</h5>
+  <div class="media">
+    <img src="../assets/images/{{order.pizza.img}}" class="mr-3" alt="Pizza Flavour">
+    <div class="media-body">
+      <div>Pizza {{order.pizza.flavor | lowercase }} {{order.pizza_size.size | lowercase }}</div>
+      <div class="cart-footer">
+        <div><i class="bi bi-tag"></i> {{order.price | currency:'R$ '}}</div>
+        <div><i class="bi bi-clock"></i> {{order.duration}}  mn</div>
+      </div>
+    </div>
+  </div>
+</div>

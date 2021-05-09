@@ -1,12 +1,12 @@
 <h2 class="mb-4">Escolha o tamanho da sua pizza:</h2>
 <div class="wrapper-list-pizzas d-lg-flex">
-  <div class="list-pizzas" *ngFor="let pizzaSize of pizza_size">
+  <div class="list-pizzas" *ngFor="let pizzaSize of pizzaSizes">
 
     <div class="card mx-auto">
-      <img src="../assets/images/{{pizzaSizeImg[pizzaSize.id]}}" class="card-img-top" alt="...">
+      <img src="../assets/images/{{pizzaSize.img}}" class="card-img-top" alt="...">
       <div class="card-body">
         <div class="form-check">
-          <input class="form-check-input pizza-size" type="radio" name="pizza-size" (click) = "pizzaSizeCheck(pizzaSize.id)" id="{{pizzaSize.size}}" value="{{pizzaSize.id}}">
+          <input class="form-check-input pizza-size" type="radio" name="pizza-size" (click) = "pizzaSizeCheck(pizzaSize.id)" id="{{pizzaSize.size}}" value="{{pizzaSize.id}}" required="required">
           <label class="form-check-label" for="{{pizzaSize.size}}">
             <h5 class="card-title">{{pizzaSize.size}}</h5>
           </label>
@@ -25,10 +25,10 @@
   <div class="list-pizzas" *ngFor="let pizza of pizzas">
 
     <div class="card mx-auto">
-      <img src="../assets/images/{{pizzaFoto[pizza.id]}}" class="card-img-top" alt="...">
+      <img src="../assets/images/{{pizza.img}}" class="card-img-top" alt="...">
       <div class="card-body">
         <div class="form-check">
-          <input class="form-check-input pizza-flavor" type="radio" name="pizza-flavor" (click) = "pizzaCheck(pizza.id)" id="{{pizza.flavor}}" value="{{pizza.id}}">
+          <input class="form-check-input pizza-flavor" type="radio" name="pizza-flavor" (click) = "pizzaCheck(pizza.id)" id="{{pizza.flavor}}" value="{{pizza.id}}" required="required">
           <label class="form-check-label" for="{{pizza.flavor}}">
             <h5 class="card-title">{{pizza.flavor}}</h5>
           </label>
@@ -42,6 +42,6 @@
   </div>
 </div>
 
-<button class="btn btn-pizzaria btn-lg" role="button">Confirmar</button>
+<button class="btn btn-pizzaria btn-lg" [disabled]="!(pizzaSizeId && pizzaId)" (click)="addNewPizza()" role="button">Confirmar</button>
 
 

@@ -3,5 +3,6 @@ export interface Pizza {
   flavor: string;
   duration: number;
   availability: boolean;
+  img: string;
   creationDate: Date;
 }

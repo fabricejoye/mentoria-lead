@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BannerComponent } from './_components/banner/banner.component';
@@ -13,6 +13,7 @@ import { MontarpizzaComponent } from './_components/pedido/montarpizza/montarpiz
 import { PersonalizarpizzaComponent } from './_components/pedido/personalizarpizza/personalizarpizza.component';
 import { SeuspedidosComponent } from './_pages/seuspedidos/seuspedidos.component';
 import { PerfilComponent } from './_pages/perfil/perfil.component';
+import { CartComponent } from './_components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -26,11 +27,13 @@ import { PerfilComponent } from './_pages/perfil/perfil.component';
     MontarpizzaComponent,
     PersonalizarpizzaComponent,
     SeuspedidosComponent,
-    PerfilComponent
+    PerfilComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

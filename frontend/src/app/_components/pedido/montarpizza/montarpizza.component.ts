@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { PIZZAS } from '../../../mocks/mock_pizzas';
-import { PIZZAS_SIZE } from '../../../mocks/mock_pizza_size';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Pizza } from '../../../_models/pizza';
+import { Pizza_size } from '../../../_models/pizza_size';
 
 @Component({
   selector: 'app-montarpizza',
@@ -9,16 +9,20 @@ import { PIZZAS_SIZE } from '../../../mocks/mock_pizza_size';
 })
 export class MontarpizzaComponent implements OnInit {
 
-  pizzas = PIZZAS;
-
-  pizzaFoto = {"1": "calabresa.png", "2": "marguerita.png", "3": "portuguesa.png"};
-
-  pizza_size = PIZZAS_SIZE;
-
-  pizzaSizeImg = {"1": "pizza-p.png", "2": "pizza-m.png", "3": "pizza-g.png"};
+  @Input() pizzas: Pizza;
+  @Input() pizzaSizes: Pizza_size;
 
   pizzaSizeId: number;
   pizzaId: number;
+  value: string;
+
+  // Send pizza e pizza_size to pedido
+  @Output() newItemEvent = new EventEmitter();
+
+  addNewPizza() {
+    this.value = this.pizzaId + "-" + this.pizzaSizeId;
+    this.newItemEvent.emit(this.value);
+  }
 
   pizzaSizeCheck(id) {
     this.pizzaSizeId = id;

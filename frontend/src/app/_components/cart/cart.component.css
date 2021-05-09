@@ -1,0 +1,32 @@
+.media {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  background-color: #2B2B2D;
+  color: white;
+  width: 250px;
+  font-size: 0.8rem;
+}
+
+.media img {
+  width: 60px;
+  height: auto;
+  margin-right: 0.2rem;
+}
+
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+}
+
+.media-body {
+  -ms-flex: 1;
+  flex: 1;
+  margin-right: 0.2rem;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+}
