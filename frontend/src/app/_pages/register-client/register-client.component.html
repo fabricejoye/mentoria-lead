@@ -1,0 +1,181 @@
+<form>
+  <div class="border border-light m-3 p-2 rounded">
+    <div class="row">
+      <div class="col">
+        <h3>Contato</h3>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 col-lg-6">
+        <!--Firstname -->
+        <div class="form-group">
+          <label for="customerFirstname">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="customerFirstname"
+            [(ngModel)]="client.firstname"
+            name="customerFirstname"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- Lastname -->
+        <div class="form-group">
+          <label for="customerLastname">Sobrenome</label>
+          <input
+          type="text"
+          class="form-control"
+          id="customerLastname"
+          [(ngModel)]="client.lastname"
+          name="customerLastname"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <!-- E-mail -->
+        <div class="form-group">
+          <label for="customerEmail">E-mail</label>
+          <input type="email"
+          class="form-control"
+          id="customerEmail"
+          [(ngModel)]="client.email"
+          name="customerEmail"
+          />
+          <small id="emailHelp" class="form-text text-muted"
+          >We'll never share your email with anyone else.</small>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- Telefone -->
+        <div class="form-group">
+          <label for="customerTel">Telefone</label>
+          <input
+          type="email"
+          class="form-control"
+          id="customerTel"
+          [(ngModel)]="client.tel"
+          name="customerTel"
+          />
+          <small id="telHelp" class="form-text text-muted"
+            >Insira o telefone com DDD.</small
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="border border-light m-3 p-2 rounded">
+    <div class="row">
+      <div class="col">
+        <h3>Endereço</h3>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 col-lg-6">
+        <!--Street -->
+        <div class="form-group">
+          <label for="customerStreet">Rua</label>
+          <input
+          type="text"
+          class="form-control"
+          id="customerStreet"
+          [(ngModel)]="client.street"
+          name="customerStreet"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- streetNumber -->
+        <div class="form-group">
+          <label for="customerstreetNumber">Número</label>
+          <input type="text"
+          class="form-control"
+          id="customerstreetNumber"
+          [(ngModel)]="client.streetNumber"
+          name="customerstreetNumber"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-12 col-lg-6">
+        <!-- city -->
+        <div class="form-group">
+          <label for="customerCity">Cidade</label>
+          <input
+          type="email"
+          class="form-control"
+          id="customerCity"
+          [(ngModel)]="client.city"
+          name="customerCity"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- zipcode -->
+        <div class="form-group">
+          <label for="customerZipcode">CEP</label>
+          <input
+          type="email"
+          class="form-control"
+          id="customerZipcode"
+          [(ngModel)]="client.zipcode"
+          name="customerZipcode"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-lg-6">
+        <!-- District -->
+        <div class="form-group">
+          <label for="customerDistrict">Bairro</label>
+          <input
+          type="email"
+          class="form-control"
+          id="customerDistrict"
+          [(ngModel)]="client.district"
+          name="customerDistrict"
+          />
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <!-- Hint -->
+        <div class="form-group">
+          <label for="customerHint">Dica</label>
+          <input
+          type="email"
+          class="form-control"
+          id="customerHint"
+          [(ngModel)]="client.hint"
+          name="customerHint"
+          />
+        </div>
+        <!-- CreationDate -->
+        <div class="form-group d-none">
+          <input
+          type="date"
+          class="form-control"
+          id="customerCreationDate"
+          [(ngModel)]="client.creationDate"
+          name="customerCreationDate"
+          value = "{{today | date:'jj-mm-aaaa'}}"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="usuarioCadastrado" *ngIf="isUsuarioCadastrado" class="border border-light m-3 p-2 rounded">
+    <div class="alert alert-success" role="alert">
+      Usuário cadastrado com sucesso!
+    </div>
+  </div>
+
+  <button type="button" class="btn btn-primary" (click)="registerClient()">
+    CADASTRAR
+  </button>
+</form>

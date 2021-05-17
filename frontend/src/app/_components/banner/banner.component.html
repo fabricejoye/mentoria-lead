@@ -11,13 +11,26 @@
       <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
+            <a class="nav-link"  routerLink="/seuperfil" routerLinkActive="active">Perfil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Seus pedidos</a>
+            <a class="nav-link disabled" routerLink="/seuspedidos" routerLinkActive="active" tabindex="-1" aria-disabled="true">Seus pedidos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Admin (teste)
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/register-client" routerLinkActive="active" tabindex="-1" >Cadastrar novo cliente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/clients" routerLinkActive="active" tabindex="-1" >Lstar clientes</a>
+              </li>
+            </ul>
           </li>
           <li class="nav-item d-flex">
             <a class="nav-link logout" href="#" tabindex="-1"><i class="bi bi-box-arrow-right"></i></a>

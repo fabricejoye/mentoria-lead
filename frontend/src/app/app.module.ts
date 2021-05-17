@@ -15,6 +15,8 @@ import { PersonalizarpizzaComponent } from './_components/pedido/personalizarpiz
 import { SeuspedidosComponent } from './_pages/seuspedidos/seuspedidos.component';
 import { PerfilComponent } from './_pages/perfil/perfil.component';
 import { CartComponent } from './_components/cart/cart.component';
+import { RegisterClientComponent } from './_pages/register-client/register-client.component';
+import { ClientsComponent } from './_pages/clients/clients.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { CartComponent } from './_components/cart/cart.component';
     PersonalizarpizzaComponent,
     SeuspedidosComponent,
     PerfilComponent,
-    CartComponent
+    CartComponent,
+    RegisterClientComponent,
+    ClientsComponent
   ],
   imports: [
     BrowserModule,
